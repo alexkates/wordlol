@@ -34,7 +34,7 @@ const getLetterBackgroundColor = (
 
 const Guesses: React.FC<GuessesProps> = ({ guesses, answer }) => {
   return (
-    <ol>
+    <ol className="m-4">
       {guesses.map((guess, guessIndex) => (
         <li key={guessIndex} className="grid grid-cols-5">
           {guess.split("").map((letter, letterIndex) => (
