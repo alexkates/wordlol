@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Description from "../components/description";
 import Form from "../components/form";
 import Guesses from "../components/guesses";
 import Loser from "../components/loser";
 import Winner from "../components/winner";
-import answers from "./answers.json";
 
 const Home: NextPage = () => {
   const [guesses, setGuesses] = useState<string[]>([]);
@@ -15,8 +14,9 @@ const Home: NextPage = () => {
     setRandomAnswer();
   }, []);
 
-  const setRandomAnswer = () => {
-    const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+  const setRandomAnswer = async () => {
+    const response = await fetch("/api/answer");
+    const { answer: randomAnswer } = await response.json();
     setAnswer(randomAnswer);
   };
 
