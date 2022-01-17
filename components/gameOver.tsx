@@ -1,6 +1,5 @@
 import Guesses from "./guesses";
 import Link from "next/link";
-import Description from "./description";
 
 export interface GameOverProps {
   answer: string;
