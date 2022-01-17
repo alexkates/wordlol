@@ -1,16 +1,17 @@
 import Guesses from "./guesses";
 import Link from "next/link";
+import Description from "./description";
 
-export interface LoserProps {
-  guesses: string[];
+export interface GameOverProps {
   answer: string;
+  guesses: string[];
 }
 
-const Loser: React.FC<LoserProps> = ({ guesses, answer }) => {
+const GameOver: React.FC<GameOverProps> = ({ answer, guesses, children }) => {
   return (
-    <div className="grid place-items-center h-screen">
+    <div className="grid place-items-center">
       <div className="text-center">
-        <h1 className="text-4xl font-bold">You Lose!</h1>
+        <h1 className="text-4xl font-bold">{children}</h1>
         <h2>
           The answer was <span className="font-bold">{answer}</span>
         </h2>
@@ -25,4 +26,4 @@ const Loser: React.FC<LoserProps> = ({ guesses, answer }) => {
   );
 };
 
-export default Loser;
+export default GameOver;

@@ -6,9 +6,8 @@ import type {
 import { useEffect, useState } from "react";
 import Description from "../components/description";
 import Form from "../components/form";
+import GameOver from "../components/gameOver";
 import Guesses from "../components/guesses";
-import Loser from "../components/loser";
-import Winner from "../components/winner";
 import answers from "./answers.json";
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -28,12 +27,20 @@ const Home: NextPage = ({
 
   const isWinner = guesses.length > 0 && guesses[guesses.length - 1] === answer;
   if (isWinner) {
-    return <Winner guesses={guesses} answer={answer} />;
+    return (
+      <GameOver guesses={guesses} answer={answer}>
+        You win!
+      </GameOver>
+    );
   }
 
   const isLoser = guesses.length >= 5 && guesses[guesses.length - 1] !== answer;
   if (isLoser) {
-    return <Loser guesses={guesses} answer={answer} />;
+    return (
+      <GameOver guesses={guesses} answer={answer}>
+        You Lose!
+      </GameOver>
+    );
   }
 
   return (
