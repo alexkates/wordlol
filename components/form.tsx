@@ -26,7 +26,7 @@ const Form: React.FC<FormProps> = ({ guesses, setGuesses }: FormProps) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        className="border-2 border-gray-400 p-2 m-2 text-3xl"
+        className="text-center border-2 border-gray-400 p-2 m-2 text-3xl"
         type="text"
         onChange={handleChange}
         maxLength={5}

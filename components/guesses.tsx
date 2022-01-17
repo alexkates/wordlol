@@ -44,7 +44,7 @@ const Guesses: React.FC<GuessesProps> = ({ guesses, answer }) => {
                 guess,
                 letterIndex,
                 answer
-              )} flex border-2 font-bold text-3xl border-gray-400 p-2 m-2 box-border h-32 w-32 justify-center items-center`}
+              )} h-12 w-12 text-2xl flex border-2 border-gray-300 p-1 m-1 box-border justify-center items-center`}
             >
               {letter}
             </span>
