@@ -34,7 +34,7 @@ const Home: NextPage = ({
     );
   }
 
-  const isLoser = guesses.length >= 5 && guesses[guesses.length - 1] !== answer;
+  const isLoser = guesses.length >= 6 && guesses[guesses.length - 1] !== answer;
   if (isLoser) {
     return (
       <GameOver guesses={guesses} answer={answer}>
