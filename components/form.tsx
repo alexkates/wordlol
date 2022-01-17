@@ -20,7 +20,7 @@ const Form: React.FC<FormProps> = ({ guesses, setGuesses }: FormProps) => {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setGuess(event.target.value.replace(/[^a-zA-Z]/g, ""));
+    setGuess(event.target.value.replace(/[^a-zA-Z]/g, "").toLowerCase());
   };
 
   return (
